@@ -48,7 +48,7 @@ class LoopApp():
 
                 async def _coro(_):
                     await _
-                asyncio.get_event_loop().run_until_complete(_coro(t))
+                self.loop.run_until_complete(_coro(t))
             except asyncio.CancelledError:
                 logging.info(f"{ t } has been canceled now.")
 
