@@ -29,10 +29,11 @@ class LoopApp():
         self.__tasks.append(fast_task)
 
         # create slow task
-        fast_task = self.__create_slow_task(5)
-        self.__tasks.append(fast_task)
+        slow_task = self.__create_slow_task(5)
+        self.__tasks.append(slow_task)
 
-        logging.debug(f"self.__tasks:{self.__tasks}")
+        # https://docs.python.org/3.8/library/asyncio-task.html#coroutines
+        logging.info(f"self.__tasks:{self.__tasks}")
 
     def __close_tasks(self):
         # https://docs.python.org/3.8/library/asyncio-task.html#asyncio.Task.cancel
